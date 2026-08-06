@@ -80,6 +80,23 @@ h2{font-family:var(--serif);font-weight:300;font-size:clamp(1.9rem,3.6vw,2.7rem)
 .tags{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.8rem}
 .tag{font-family:var(--mono);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;border:1px solid var(--line);padding:.45rem .8rem;border-radius:999px;color:var(--ink-soft)}
 
+/* arms */
+.arms{display:grid;grid-template-columns:1fr 1fr;margin-top:2.75rem;border-top:1px solid var(--line)}
+.arm{padding:2.2rem 2.4rem 2.4rem 0}
+.arm + .arm{padding-left:2.4rem;padding-right:0;border-left:1px solid var(--line)}
+.arm-num{font-family:var(--mono);font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent)}
+.arm h3{font-family:var(--serif);font-weight:400;font-size:1.45rem;line-height:1.2;margin:.95rem 0 .75rem}
+.arm p{color:var(--ink-soft);font-size:1rem}
+.arm .tags{margin-top:1.4rem}
+
+/* ledger */
+.ledger{margin-top:2.4rem;border-top:1px solid var(--line)}
+.row{display:grid;grid-template-columns:2.4rem 1fr 2.1fr auto;gap:1.4rem;align-items:baseline;padding:1.3rem 0;border-bottom:1px solid var(--line)}
+.row-num{font-family:var(--mono);font-size:.68rem;letter-spacing:.18em;color:var(--ink-soft);opacity:.6}
+.row-name{font-family:var(--serif);font-weight:400;font-size:1.2rem}
+.row-desc{font-size:.95rem;color:var(--ink-soft);line-height:1.55}
+.row-status{font-family:var(--mono);font-size:.64rem;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);white-space:nowrap}
+
 /* owners */
 .owners{padding:clamp(3.5rem,9vh,6.5rem) 0}
 .owners-inner{display:grid;grid-template-columns:1.4fr 1fr;gap:clamp(2rem,6vw,5rem);align-items:end}
@@ -108,6 +125,11 @@ footer{border-top:1px solid var(--line);padding:2rem 0 2.6rem}
   html{scroll-behavior:auto}
 }
 @media (max-width:880px){
+  .arms{grid-template-columns:1fr}
+  .arm{padding:2rem 0}
+  .arm + .arm{padding-left:0;border-left:none;border-top:1px solid var(--line)}
+  .row{grid-template-columns:2.4rem 1fr auto}
+  .row-desc{grid-column:2 / -1;grid-row:2}
   .grid4{grid-template-columns:1fr 1fr;border-left:none}
   .p-item{border-right:none;border-left:1px solid var(--line-paper);margin-bottom:2.2rem}
   .split,.owners-inner{grid-template-columns:1fr}
@@ -132,8 +154,9 @@ footer{border-top:1px solid var(--line);padding:2rem 0 2.6rem}
   <section class="hero wrap">
     <span class="label reveal">Est. 2026 · Western Massachusetts</span>
     <h1 class="reveal">A private holding company built to <em>own</em>, not to exit.</h1>
-    <p class="reveal">Kendra Holdings acquires and operates essential, cash-generative
-    self-serve businesses in Western Massachusetts — and holds them permanently.</p>
+    <p class="reveal">Kendra Holdings acquires essential, cash-generative self-serve
+    businesses in Western Massachusetts — and designs and builds fintech and consumer
+    software in-house. Everything we own, we hold permanently.</p>
     <div class="hero-rule reveal" aria-hidden="true">
       <div class="line"></div><span>Principles</span>
     </div>
@@ -146,12 +169,12 @@ footer{border-top:1px solid var(--line);padding:2rem 0 2.6rem}
         <div class="p-item reveal">
           <span class="num">01</span>
           <h3>Principal‑led</h3>
-          <p>Every acquisition is sourced, negotiated, and operated by the principal. No committees, no intermediaries between you and a decision.</p>
+          <p>Everything here — bought or built — is sourced, negotiated, and operated by the principal. No committees, no intermediaries between you and a decision.</p>
         </div>
         <div class="p-item reveal">
           <span class="num">02</span>
           <h3>Permanent hold</h3>
-          <p>We buy businesses to keep them. No fund cycle, no resale timeline, no intention of selling.</p>
+          <p>We buy businesses — and build products — to keep them. No fund cycle, no resale timeline, no intention of selling.</p>
         </div>
         <div class="p-item reveal">
           <span class="num">03</span>
@@ -167,45 +190,70 @@ footer{border-top:1px solid var(--line);padding:2rem 0 2.6rem}
     </div>
   </section>
 
-  <section class="focus wrap" aria-labelledby="focus-h">
-    <span class="label">Focus</span>
+  <section class="focus wrap" aria-labelledby="what-h">
+    <span class="label">What we do</span>
     <div class="split">
-      <h2 id="focus-h">Essential, self‑serve, close to home.</h2>
+      <h2 id="what-h">Two arms. One owner.</h2>
       <div class="focus-copy">
-        <p>Our focus is self‑serve essential services — beginning with laundry. These are
-        businesses people depend on every week, in every economy, run best by owners who
-        are physically present in the community they serve.</p>
-        <p>We concentrate in the Pioneer Valley and greater Hampden County, where we live
-        and work, and where being twenty minutes away is a durable operating advantage.</p>
-        <div class="tags" aria-label="Focus areas">
+        <p>Kendra Holdings compounds in two directions: we acquire and operate essential
+        self‑serve businesses close to home, and we design and build software — advanced
+        fintech solutions, integrations, and consumer products — in‑house. Different
+        assets, same discipline: own it outright, run it well, hold it permanently.</p>
+      </div>
+    </div>
+    <div class="arms">
+      <div class="arm reveal">
+        <span class="arm-num">I · Operations</span>
+        <h3>Essential, self‑serve, close to home.</h3>
+        <p>Businesses people depend on every week, in every economy — beginning with
+        laundry — concentrated in the Pioneer Valley and greater Hampden County, where
+        being twenty minutes away is a durable operating advantage.</p>
+        <div class="tags" aria-label="Operations focus">
           <span class="tag">Laundromats</span>
           <span class="tag">Self‑serve services</span>
-          <span class="tag">Hampden County</span>
-          <span class="tag">Pioneer Valley</span>
+          <span class="tag">Western Massachusetts</span>
+        </div>
+      </div>
+      <div class="arm reveal">
+        <span class="arm-num">II · Software</span>
+        <h3>Fintech and consumer software, built in‑house.</h3>
+        <p>Advanced fintech solutions and integrations — payments infrastructure, banking
+        and accounting automation, the connective tissue between financial systems — and
+        consumer products, engineered by an operator, for operators.</p>
+        <div class="tags" aria-label="Software focus">
+          <span class="tag">Fintech integrations</span>
+          <span class="tag">Payments</span>
+          <span class="tag">Automation</span>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="focus wrap" aria-labelledby="software-h">
-    <span class="label">Software</span>
-    <div class="split">
-      <h2 id="software-h">Fintech systems and consumer software, built in‑house.</h2>
-      <div class="focus-copy">
-        <p class="reveal">Alongside the businesses we own, Kendra Holdings builds its own
-        software: advanced fintech solutions and integrations — payments infrastructure,
-        banking and accounting automation, and the connective tissue between financial
-        systems — engineered by an operator, for operators.</p>
-        <p class="reveal"><strong>LandLens</strong>, our first consumer product, is a
-        rate‑your‑landlord app for college students and their parents: verified student
-        reviews, municipal rental‑license records, and landlord histories across 58,000+
-        real properties in 19 campus markets nationwide. Coming to the App&nbsp;Store.</p>
-        <div class="tags" aria-label="Software focus areas">
-          <span class="tag">Fintech integrations</span>
-          <span class="tag">Payments infrastructure</span>
-          <span class="tag">Automation</span>
-          <span class="tag">LandLens · iOS</span>
-        </div>
+  <section class="focus wrap" aria-labelledby="portfolio-h">
+    <span class="label" id="portfolio-h">Portfolio</span>
+    <div class="ledger">
+      <div class="row reveal">
+        <span class="row-num">01</span>
+        <span class="row-name">LandLens</span>
+        <span class="row-desc">Rate‑your‑landlord app for college students and their
+        parents — verified student reviews, municipal rental‑license records, and
+        landlord histories across 58,000+ real properties in 19 campus markets
+        nationwide.</span>
+        <span class="row-status">iOS · Coming soon</span>
+      </div>
+      <div class="row reveal">
+        <span class="row-num">02</span>
+        <span class="row-name">Fintech integrations</span>
+        <span class="row-desc">Payments, banking, and accounting automation — financial
+        systems connected and operated long‑term.</span>
+        <span class="row-status">Active</span>
+      </div>
+      <div class="row reveal">
+        <span class="row-num">03</span>
+        <span class="row-name">Self‑serve operations</span>
+        <span class="row-desc">Essential neighborhood businesses in Western
+        Massachusetts, acquired to hold.</span>
+        <span class="row-status">Acquiring</span>
       </div>
     </div>
   </section>
